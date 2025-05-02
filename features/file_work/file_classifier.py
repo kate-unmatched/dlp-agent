@@ -4,7 +4,7 @@ import joblib
 import os
 
 # Путь до модели (можно настроить через config.py)
-MODEL_PATH = "ml/file_content_model.pkl"
+MODEL_PATH = "C:/Projects/dlp-agent/features/file_work/ml/file_content_model.pkl"
 
 # Загрузка модели при импорте
 try:

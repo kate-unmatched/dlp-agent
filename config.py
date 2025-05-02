@@ -7,7 +7,7 @@ USER_ID = "user42"
 SERVER_URL = "http://127.0.0.1:8000/predict"
 
 # Интервал между отправками данных (в секундах)
-SEND_INTERVAL = 60
+SEND_INTERVAL = 30
 
 # Включить или отключить эмуляцию (если False — будет попытка реального сбора)
 USE_SIMULATION = True

@@ -13,7 +13,7 @@ import os
 MODEL_OUTPUT_PATH = os.path.join("ml", "file_content_model.pkl")
 
 # Путь к CSV-файлу с размеченными данными
-DATASET_PATH = "data/file_dataset.csv"  # ожидается CSV: text,label
+DATASET_PATH = "datasets/file_dataset.csv"  # ожидается CSV: text, label
 
 
 def train_model():

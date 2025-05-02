@@ -4,6 +4,7 @@ import time
 import requests
 from config import USER_ID, SERVER_URL, SEND_INTERVAL
 from features.file_work.file_activity import collect_file_features
+from features.process_activity.processes_work import collect_process_features
 from utils.system import get_timestamp
 
 
@@ -11,7 +12,7 @@ def send_to_server(features: dict):
     payload = {
         "user_id": USER_ID,
         "timestamp": get_timestamp(),
-        "features": features
+        "features": features  # <-- группы признаков
     }
 
     try:
@@ -29,7 +30,10 @@ def main_loop():
     print("🗂️  Агент DLP: мониторинг файловой активности активен\n")
 
     while True:
-        features = collect_file_features()
+        features = {
+            # "file_activity": collect_file_features(),
+            "process_activity": collect_process_features()
+        }
         send_to_server(features)
         time.sleep(SEND_INTERVAL)
 
