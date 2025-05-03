@@ -5,6 +5,9 @@ import requests
 from config import USER_ID, SERVER_URL, SEND_INTERVAL
 from features.file_work.file_activity import collect_file_features
 from features.process_activity.processes_work import collect_process_features
+from features.behavioral_context.behavioral_signs import collect_behavioral_context
+from features.usb_activity.usb_monitor import collect_usb_features
+from features.network_activity.network_monitor import collect_network_features
 from utils.system import get_timestamp
 
 
@@ -31,8 +34,11 @@ def main_loop():
 
     while True:
         features = {
-            # "file_activity": collect_file_features(),
-            "process_activity": collect_process_features()
+            "file_activity": collect_file_features(),
+            "process_activity": collect_process_features(),
+            "behavioral_context": collect_behavioral_context(),
+            "usb_activity": collect_usb_features(),
+            "network_activity": collect_network_features()
         }
         send_to_server(features)
         time.sleep(SEND_INTERVAL)

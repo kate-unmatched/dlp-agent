@@ -123,7 +123,6 @@ def get_recent_files(directories, last_seconds=30):
                         _state["archive_created_count"] += 1
 
                     if any(abs_path.lower().startswith(os.path.abspath(sd).lower()) for sd in SYSTEM_DIRS):
-                        print(f"🛠️ Системный файл изменён: {abs_path}")
                         _state["file_system_update_count"] += 1
 
             except Exception:
